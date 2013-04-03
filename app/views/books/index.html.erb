@@ -1,0 +1,44 @@
+<h1>Listing books</h1>
+
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Sign out</th>
+    <th>Due date</th>
+    <th>Email</th>
+    <th>User name</th>
+    <th>Password</th>
+    <th>Category</th>
+    <th>Book Title</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @books.each do |book| %>
+<% if book.category == 2 %>
+  <tr>
+    <td><%= book.firstName %></td>
+    <td><%= book.lastName %></td>
+    <td><%= book.signOut %></td>
+    <td><%= book.dueDate %></td>
+    <td><%= book.email %></td>
+    <td><%= book.userName %></td>
+    <td><%= book.password %></td>
+    <td><%= book.category %></td>
+    <td><%= book.Bookname %></td>
+    
+    <td><%= link_to 'Show', book %></td>
+    <td><%= link_to 'Edit', edit_book_path(book) %></td>
+    <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+  <% end%>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Book', new_book_path %>
+<%= link_to 'User Accounts',users_path%>
+<%= link_to 'Search', searches_path %>
