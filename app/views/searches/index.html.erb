@@ -8,42 +8,41 @@
 					<a href="#">User</a> | <a href="#">Admin</a>
 				</div>
 				<div id="headerContentBottom">
-					<h1>Available books</h1>
+					<h1>My Dashboard</h1>
+					<h3>Browse Books</h3>
 				</div>
 			</div>
 </div>
 		<div id="mainContent">
-			<div id="mainContentTop">
-				<table>
-				  <tr>
-				    
-				    <th>Book Title</th>
-				    
-				    <th></th>
-				    <th></th>
-				  </tr>
+			<div id="mainContent-left">
+				<h3>Available Books:</h3>
+				<div id="dashboard">
+					<table>
+				  		<tr>
+						    <th>Book Title</th>
+						    <th></th>
+						    <th></th>
+				 		 </tr>
 				
-				<% @books.each do |book| %>
-				<% if book.category == 3  %>
-				  <tr>
-				    
-				    <td><%= book.Bookname %></td>
-				    
-				    
-				    <td><%= link_to 'Edit book details', edit_search_path(book) %></td>
-				    <td><%= link_to 'Remove book', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-				  </tr>
-				  <% end%>
-				<% end %>
+						<% @books.each do |book| %>
+							<% if book.category == 3  %>
+						 		 <tr>
+						    		 <td><%= book.Bookname %></td>
+						    		 <td><%= link_to 'Edit book details', edit_search_path(book) %></td>
+						   			 <td><%= link_to 'Remove book', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+						  		</tr>
+					   		<% end%>
+						<% end %>
 				</table>
-				
-				<br />
-				
-				<%= link_to 'Books', books_path %>
-				<%= link_to 'User Accounts',users_path%>
-				<%= link_to 'Search', searches_path %>
+				</div>
 			</div>
-			<div id="mainContentBottom"
+			<div id="mainContent-right">
+				<h2>What would you like to do?</h2>
+				<ul>
+					<li><%= link_to 'Books', books_path %></li>
+					<li><%= link_to 'User Accounts',users_path%></li>
+					<li><%= link_to 'Search', searches_path %></li>
+				</ul>
 			</div>
 			
 		</div>
@@ -52,4 +51,5 @@
 		</div>
 	</div>
 
+				
 

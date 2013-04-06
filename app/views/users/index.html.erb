@@ -1,41 +1,73 @@
-<h1>User Accounts</h1>
+<div id="wrapper">
+		<div id="header">
+			<div id="logo">
+				<img src="/assets/logo.png" />
+			</div>
+			<div id="headerContent">
+				<div id="headerContentTop">
+					<a href="#">User</a> | <a href="#">Admin</a>
+				</div>
+				<div id="headerContentBottom">
+					<h1>My Dashboard</h1>
+					<h3>User Accounts</h3>
+				</div>
+			</div>
+</div>
+		<div id="mainContent">
+			<div id="mainContent-left">
+				<h3>All Users:</h3>
+				<div id="dashboard">
+					<table >
+					  <tr>
+					    <th>First name</th>
+					    <th>Last name</th>
+					    <th>Email</th>
+					    <th>User name</th>
+					    <th>User type</th>
+					    
+					    <th></th>
+					    <th></th>
+					  </tr>
+					
+					<% @books.each do |book| %>
+						<% if book.category ==1 || book.category==2%>
+					  <tr>
+					    <td><%= book.firstName %></td>
+					    <td><%= book.lastName %></td>
+					    <td><%= book.email %></td>
+					    <td><%= book.userName %></td>
+					    
+					    <% if book.category ==1 %>
+					    	<td>Admin</td>
+					    <% end %>
+					    <% if book.category ==2%>
+					    	<td>User </td>
+					    	<% end %>
+					    
+					    <td><%= link_to 'Edit', edit_user_path(book) %></td>
+					    <td><%= link_to 'Remove account', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+					  </tr>
+					  <% end%>
+					<% end %>
+					</table>
+				</div>
+			</div>
+			<div id="mainContent-right">
+				<h2>What would you like to do?</h2>
+				<ul>
+					<li><%= link_to 'New User', new_user_path %></li>
+					<li><%= link_to 'View Sign outs', books_path%></li>
+					<li><%= link_to 'Search', searches_path %></li>
+				</ul>
+			</div>
+			
+		</div>
+		<div id="footer">
+			<p>&#0169; Cloud Library 2013</p>
+		</div>
+	</div>
 
-<table >
-  <tr>
-    <th>First name</th>
-    <th>Last name</th>
-    <th>Email</th>
-    <th>User name</th>
-    <th>User type</th>
-    
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @books.each do |book| %>
-	<% if book.category ==1 || book.category==2%>
-  <tr>
-    <td><%= book.firstName %></td>
-    <td><%= book.lastName %></td>
-    <td><%= book.email %></td>
-    <td><%= book.userName %></td>
-    
-    <% if book.category ==1 %>
-    	<td>Admin</td>
-    <% end %>
-    <% if book.category ==2%>
-    	<td>User </td>
-    	<% end %>
-    
-    <td><%= link_to 'Edit', edit_user_path(book) %></td>
-    <td><%= link_to 'Remove account', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-  <% end%>
-<% end %>
-</table>
 
-<br />
 
-<%= link_to 'New User', new_user_path %>
-<%= link_to 'View Sign outs', books_path%>
-<%= link_to 'Search', searches_path%>
+

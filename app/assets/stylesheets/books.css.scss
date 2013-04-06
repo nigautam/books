@@ -18,11 +18,17 @@ h1{
 }
 
 h2{
-  font-size: 28px;
+  font-size: 24px;
+  color:#00314d;
+  letter-spacing:1px;
+  line-height:1.4;
+}
+
+h3{
+  font-size: 18px;
   color:#00314d;
   letter-spacing:1px;
 }
-
 
 #wrapper{
   margin:0 auto;
@@ -31,7 +37,7 @@ h2{
 
 #header{
   width:100%;
-  overflow:auto;
+  overflow:hidden;
 }
 
 #logo{
@@ -73,11 +79,18 @@ P{
 width: 100%;
 clear:both;
 overflow:auto;
-margin-top:10px;
+margin-top:20px;
+padding:10px;
 }
 
 #mainContentTop{
   width: 670px;
+  margin:0 auto;
+  text-align:left;
+}
+
+#mainContentTop-form{
+  width: 400px;
   margin:0 auto;
   text-align:left;
 }
@@ -106,6 +119,33 @@ margin-top:10px;
   font-weight:bold;
   color:#d6f0ff;
   text-transform:uppercase;
+}
+
+#mainContent-left{
+  float:left;
+  width:680px;
+  padding:10px;
+}
+
+#mainContent-right{
+  float:left;
+  width:240px;
+  padding:10px;
+}
+
+#mainContent-right h2{
+  text-align:center;
+}
+
+#dashboard{
+  background:#ffffff;
+  float:left;
+  width:680px;
+  -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    padding:5px;
 }
 
 #footer{

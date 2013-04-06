@@ -1,44 +1,73 @@
-<h1>Sign outs</h1>
+<div id="wrapper">
+		<div id="header">
+			<div id="logo">
+				<img src="/assets/logo.png" />
+			</div>
+			<div id="headerContent">
+				<div id="headerContentTop">
+					<a href="#">User</a> | <a href="#">Admin</a>
+				</div>
+				<div id="headerContentBottom">
+					<h1>My Dashboard</h1>
+					<h3>Checked Outs</h3>
+				</div>
+			</div>
+</div>
+		<div id="mainContent">
+			<div id="mainContent-left">
+				<h3>Checked out books:</h3>
+				<div id="dashboard">
+					<table valign="middle">
+						  <tr>
+						    <th>First name&nbsp&nbsp</th>
+						    <th>Last name&nbsp&nbsp</th>
+						    <th>Sign out&nbsp&nbsp</th>
+						    <th>Due date&nbsp&nbsp</th>
+						    <th>Email&nbsp&nbsp</th>
+						    <th>User name&nbsp&nbsp</th>
+						    
+						    <th>Sign out/On hold&nbsp&nbsp</th>
+						    <th>Book Title&nbsp&nbsp</th>
+						    <th></th>
+						  </tr>
+						
+						<% @books.each do |book| %>
+						<% if book.category == 4 || book.category ==5 %>
+						  <tr>
+						    <td><%= book.firstName %></td>
+						    <td><%= book.lastName %></td>
+						    <td><%= book.signOut %></td>
+						    <td><%= book.dueDate %></td>
+						    <td><%= book.email %></td>
+						    <td><%= book.userName %></td>
+						    <%if book.category ==4%>
+						    <td>Sign out</td>
+						    <%end%>
+						    <%if book.category ==5%>
+						    <td>On hold</td>
+						    <%end%>
+						    <td><%= book.Bookname %></td>
+						    
+						    <td><%= link_to 'Return', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+						  </tr>
+						  <% end%>
+						<% end %>
+						</table>
+				</div>
+			</div>
+			<div id="mainContent-right">
+				<h2>What would you like to do?</h2>
+				<ul>
+					<li><%= link_to 'New Book', new_book_path %></li>
+					<li><%= link_to 'User Accounts',users_path%></li>
+					<li><%= link_to 'Search', searches_path %></li>
+				</ul>
+			</div>
+			
+		</div>
+		<div id="footer">
+			<p>&#0169; Cloud Library 2013</p>
+		</div>
+	</div>
 
-<table valign="middle">
-  <tr>
-    <th>First name&nbsp&nbsp</th>
-    <th>Last name&nbsp&nbsp</th>
-    <th>Sign out&nbsp&nbsp</th>
-    <th>Due date&nbsp&nbsp</th>
-    <th>Email&nbsp&nbsp</th>
-    <th>User name&nbsp&nbsp</th>
-    
-    <th>Sign out/On hold&nbsp&nbsp</th>
-    <th>Book Title&nbsp&nbsp</th>
-    <th></th>
-  </tr>
 
-<% @books.each do |book| %>
-<% if book.category == 4 || book.category ==5 %>
-  <tr>
-    <td><%= book.firstName %></td>
-    <td><%= book.lastName %></td>
-    <td><%= book.signOut %></td>
-    <td><%= book.dueDate %></td>
-    <td><%= book.email %></td>
-    <td><%= book.userName %></td>
-    <%if book.category ==4%>
-    <td>Sign out</td>
-    <%end%>
-    <%if book.category ==5%>
-    <td>On hold</td>
-    <%end%>
-    <td><%= book.Bookname %></td>
-    
-    <td><%= link_to 'Return', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-  <% end%>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Book', new_book_path %>
-<%= link_to 'User Accounts',users_path%>
-<%= link_to 'Search', searches_path %>

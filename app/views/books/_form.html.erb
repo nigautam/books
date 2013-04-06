@@ -1,4 +1,22 @@
-<%= form_for(@book) do |f| %>
+<div id="wrapper">
+		<div id="header">
+			<div id="logo">
+				<img src="/assets/logo.png" />
+			</div>
+			<div id="headerContent">
+				<div id="headerContentTop">
+					<a href="#">User</a> | <a href="#">Admin</a>
+				</div>
+				<div id="headerContentBottom">
+					<h1>My Dashboard</h1>
+					<h3>Checked Outs</h3>
+				</div>
+			</div>
+</div>
+		<div id="mainContent">
+			<div id="mainContentTop-form">
+				<h3>Add a new book:</h3>
+				<%= form_for(@book) do |f| %>
   <% if @book.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
@@ -51,3 +69,17 @@
     <%= f.submit %>
   </div>
 <% end %>
+			</div>
+			
+		</div>
+		<div id="footer">
+			<p>&#0169; Cloud Library 2013</p>
+		</div>
+	</div>
+
+
+
+
+
+
+
