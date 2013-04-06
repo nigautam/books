@@ -25,11 +25,8 @@ class SearchesController < ApplicationController
   # GET /books/new.json
   def new
     @book = Book.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @book }
-    end
+    redirect_to :searches
+    
   end
 
   # GET /books/1/edit
@@ -76,7 +73,7 @@ class SearchesController < ApplicationController
     @book.destroy
 
     respond_to do |format|
-      format.html { redirect_to books_url }
+      format.html { redirect_to searches_url }
       format.json { head :no_content }
     end
   end

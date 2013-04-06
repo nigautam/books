@@ -1,23 +1,23 @@
-<h1>Listing books</h1>
+<h1>Available books</h1>
 
 <table>
   <tr>
     
     <th>Book Title</th>
-    <th></th>
+    
     <th></th>
     <th></th>
   </tr>
 
 <% @books.each do |book| %>
-<% if book.category == 3 && book.available ==1 %>
+<% if book.category == 3  %>
   <tr>
     
     <td><%= book.Bookname %></td>
     
-    <td><%= link_to 'Show', book %></td>
-    <td><%= link_to 'Edit', edit_book_path(book) %></td>
-    <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    
+    <td><%= link_to 'Edit book details', edit_search_path(book) %></td>
+    <td><%= link_to 'Remove book', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
   <% end%>
 <% end %>
@@ -25,6 +25,6 @@
 
 <br />
 
-<%= link_to 'New Book', new_book_path %>
+<%= link_to 'Books', books_path %>
 <%= link_to 'User Accounts',users_path%>
 <%= link_to 'Search', searches_path %>

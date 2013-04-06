@@ -46,6 +46,7 @@ class BooksController < ApplicationController
       if @book.save
         format.html { redirect_to @book, notice: 'Book was successfully created.' }
         format.json { render json: @book, status: :created, location: @book }
+      WelcomeMailer.signup("nik_g2@hotmail.com").deliver
       else
         format.html { render action: "new" }
         format.json { render json: @book.errors, status: :unprocessable_entity }
@@ -76,7 +77,7 @@ class BooksController < ApplicationController
     @book.destroy
 
     respond_to do |format|
-      format.html { redirect_to books_url }
+      format.html { redirect_to searches_url }
       format.json { head :no_content }
     end
   end

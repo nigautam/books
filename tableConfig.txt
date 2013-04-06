@@ -1,0 +1,5 @@
+cat 1 are the admin account
+cat 2 are the user account
+cat 3 are the books which are not assigned or on hold
+cat 4 are the books which are assigned to a user account
+cat 5 are the books which are on hold

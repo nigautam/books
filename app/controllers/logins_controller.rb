@@ -1,6 +1,6 @@
-class UsersController < ApplicationController
-  # GET /users
-  # GET /users.json
+class LoginsController < ApplicationController
+  # GET /logins
+  # GET /logins.json
    def index
     @books = Book.all
 

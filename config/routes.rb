@@ -1,10 +1,14 @@
 Books::Application.routes.draw do
+  resources :logins
+
+
+  match '/show', to: 'search#show'
   resources :searches
 
 
   resources :books
   resources :users
-  resources :search
+  
 
 
   # The priority is based upon order of creation:
