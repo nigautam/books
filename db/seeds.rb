@@ -3,6 +3,18 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen'}])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Book.create(firstName: 'dsfs',lastName: 'fsf',signOut: '234',dueDate: '324',email: 'erwer',userName: 'dsffsf',password: 'sdfsf',category: '3',available: '1', Bookname: 'sfsdf')
+
+Book.create(firstName: 'Nikhil',lastName: 'Gautam', email: 'nguatam@ryerson.ca',userName: 'ngautam',password: 'password',category: '1')
+Book.create(firstName: 'Ashwin',lastName: 'Lachman', email: 'ashwin.lachman@ryerson.ca',userName: 'ashwinl',password: 'password',category: '1')
+Book.create(firstName: 'Mithcell',lastName: 'Morisson', email: 'mmorisson@ryerson.ca',userName: 'mmorisson',password: 'password',category: '1')
+
+Book.create(firstName: 'Tom',lastName: 'Linux', email: 'tlinux@ryerson.ca',userName: 'tlinux',password: 'password',category: '2')
+Book.create(firstName: 'Wayne',lastName: 'Palmen', email: 'wpalmer@ryerson.ca',userName: 'wpalmer',password: 'password',category: '2')
+Book.create(firstName: 'Jack',lastName: 'Bauer', email: 'jbauer@ryerson.ca',userName: 'jbauer',password: 'password',category: '3', Bookname: 'harry potter')
+
+Book.create(firstName: '', lastName: '',category: '3', Bookname: 'Harry Potter', email: '',userName: '',password: '')
+
+Book.create(category: '4', Bookname: 'Harry Potter', firstName: '',lastName: '', email: '',userName: '',password: '')
+Book.create(category: '5', Bookname: 'Harry Potter', firstName: '',lastName: '', email: '',userName: '',password: '')

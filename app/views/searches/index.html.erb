@@ -1,30 +1,55 @@
-<h1>Available books</h1>
+<div id="wrapper">
+		<div id="header">
+			<div id="logo">
+				<img src="/assets/logo.png" />
+			</div>
+			<div id="headerContent">
+				<div id="headerContentTop">
+					<a href="#">User</a> | <a href="#">Admin</a>
+				</div>
+				<div id="headerContentBottom">
+					<h1>Available books</h1>
+				</div>
+			</div>
+</div>
+		<div id="mainContent">
+			<div id="mainContentTop">
+				<table>
+				  <tr>
+				    
+				    <th>Book Title</th>
+				    
+				    <th></th>
+				    <th></th>
+				  </tr>
+				
+				<% @books.each do |book| %>
+				<% if book.category == 3  %>
+				  <tr>
+				    
+				    <td><%= book.Bookname %></td>
+				    
+				    
+				    <td><%= link_to 'Edit book details', edit_search_path(book) %></td>
+				    <td><%= link_to 'Remove book', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				  </tr>
+				  <% end%>
+				<% end %>
+				</table>
+				
+				<br />
+				
+				<%= link_to 'Books', books_path %>
+				<%= link_to 'User Accounts',users_path%>
+				<%= link_to 'Search', searches_path %>
+			</div>
+			<div id="mainContentBottom"
+			</div>
+			
+		</div>
+		<div id="footer">
+			<p>&#0169; Cloud Library 2013</p>
+		</div>
+	</div>
 
-<table>
-  <tr>
-    
-    <th>Book Title</th>
-    
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @books.each do |book| %>
-<% if book.category == 3  %>
-  <tr>
-    
-    <td><%= book.Bookname %></td>
-    
-    
-    <td><%= link_to 'Edit book details', edit_search_path(book) %></td>
-    <td><%= link_to 'Remove book', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-  <% end%>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'Books', books_path %>
-<%= link_to 'User Accounts',users_path%>
-<%= link_to 'Search', searches_path %>
